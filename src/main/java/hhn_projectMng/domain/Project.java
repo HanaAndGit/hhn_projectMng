@@ -53,13 +53,13 @@ public class Project {
 		return startdate;
 	}
 	public void setStartdate(String startdate) throws ParseException {
-		this.startdate = new SimpleDateFormat("yyy-MM-dd").parse(startdate);
+		this.startdate = new SimpleDateFormat("yyyy-MM-dd").parse(startdate);
 	}
 	public Date getEnddate() {
 		return enddate;
 	}
 	public void setEnddate(String enddate) throws ParseException {
-		this.enddate = new SimpleDateFormat("yyy-MM-dd").parse(enddate);
+		this.enddate = new SimpleDateFormat("yyyy-MM-dd").parse(enddate);
 	}
 	public String getPstatus() {
 		return pstatus;

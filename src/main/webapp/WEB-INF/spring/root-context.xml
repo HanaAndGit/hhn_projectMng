@@ -15,7 +15,7 @@
 	<!-- 로그 안 찍히는 거  -->
  	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://127.0.0.1:3306/book_spring"></property>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/hhn_projectMng"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="rootroot"></property>  
 	</bean>
@@ -42,4 +42,6 @@
 	<!-- clearCache : sqlSession을 일일이 close 해주지 않아도 됨 -->
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
+	<context:component-scan base-package="hhn_projectMng.persistence"></context:component-scan>
+	<context:component-scan base-package="hhn_projectMng.service"></context:component-scan>
 </beans>

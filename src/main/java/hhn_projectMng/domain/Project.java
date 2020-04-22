@@ -1,12 +1,18 @@
 package hhn_projectMng.domain;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Project {
 	private int pno;
 	private String name;
 	private String content;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startdate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date enddate;
 	private String pstatus;
 	
@@ -46,14 +52,14 @@ public class Project {
 	public Date getStartdate() {
 		return startdate;
 	}
-	public void setStartdate(Date startdate) {
-		this.startdate = startdate;
+	public void setStartdate(String startdate) throws ParseException {
+		this.startdate = new SimpleDateFormat("yyy-MM-dd").parse(startdate);
 	}
 	public Date getEnddate() {
 		return enddate;
 	}
-	public void setEnddate(Date enddate) {
-		this.enddate = enddate;
+	public void setEnddate(String enddate) throws ParseException {
+		this.enddate = new SimpleDateFormat("yyy-MM-dd").parse(enddate);
 	}
 	public String getPstatus() {
 		return pstatus;

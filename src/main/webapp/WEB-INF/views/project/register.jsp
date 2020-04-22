@@ -11,8 +11,18 @@
 </head>
 <script>
 	$(function(){
-		$("#go").click(function(){
-			location.href = "${pageContext.request.contextPath }/project/list"; 
+		$("button[type='submit']").click(function(){
+			var pno = $("input[name='pno']").val();
+			var name = $("input[name='name']").val();
+			var content = $("textarea[name='content']").val();
+			var stdate = $("input[name='startdate']").val();
+			var enddate = $("input[name='enddate']").val();
+			
+			if(pno=="" ||  name=="" || content=="" || stdate =="" || enddate=="" ){
+				alert("빈칸을 모두 채워주세요.");
+				return false;
+			}
+			
 		})
 	})     
           
@@ -39,7 +49,7 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label>project No</label>
-							<input type="text" name="pno" class="form-control" placeholder="Enter project No here">
+							<input type="text" name="pno" class="form-control" placeholder="ex)3">  
 						</div>
 						<div class="form-group">
 							<label>project name</label>
@@ -49,13 +59,13 @@
 							<label>project content</label>
 							<textarea rows="5" cols="30" placeholder="Enter Content here" name="content" class="form-control"></textarea>
 						</div>
-						<div class="form-group">
+						<div class="form-group">   
 							<label>start date</label>
-							<input type="text" name="startdate" class="form-control" placeholder="Enter start date here">
+							<input type="text" name="startdate" class="form-control" placeholder="ex)2020-04-20">
 						</div>
 						<div class="form-group">
 							<label>end date</label>
-							<input type="text" name="enddate" class="form-control" placeholder="Enter end date here">
+							<input type="text" name="enddate" class="form-control" placeholder="ex)2020-04-20">
 						</div>
 						<div class="form-group">
 							<label>project status</label>
